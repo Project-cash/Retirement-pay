@@ -1,13 +1,17 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
+import os
 
 from models import db, User
 
 app = Flask(__name__)
 
 app.config["SECRET_KEY"] = "my_secret_key_12345"
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv(
+    "DATABASE_URL",
+    "sqlite:///users.db"
+)
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db.init_app(app)
