@@ -39,13 +39,13 @@ def signup():
 
     if request.method == "POST":
 
-        email = request.form["email"]
+        username = request.form["username"]
         password = request.form["password"]
 
-        existing_user = User.query.filter_by(email=email).first()
+        existing_user = User.query.filter_by(username=username).first()
 
         if existing_user:
-            return "Email already exists."
+            return "username already exists."
 
         # Generate Registration ID
         last_user = User.query.order_by(User.id.desc()).first()
@@ -56,7 +56,7 @@ def signup():
             registration_id = "REG1001"
 
         new_user = User(
-            email=email,
+            username=username,
             password=password,
             registration_id=registration_id,
             status="Pending",
@@ -116,13 +116,13 @@ def login():
 
     if request.method == "POST":
 
-        email = request.form["email"]
+        username = request.form["username"]
         password = request.form["password"]
 
-        user = User.query.filter_by(email=email).first()
+        user = User.query.filter_by(username=username).first()
 
         if user is None:
-            return "Email not found."
+            return "Username not found."
 
         if user.password != password:
             return "Incorrect password."
